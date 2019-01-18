@@ -16,6 +16,9 @@ $primary-color: #484c55;
 $white: #ffffff;
 $main: #8fabaa;
 
+// margin variables
+$vert-margin: 10em;
+
 
 body {
     font-family: $sans-font;
@@ -36,15 +39,14 @@ img {
     height: auto;
 }
 
-.container {
+.main {
     display: grid;
-    grid-template-columns: 40px 1fr 1fr 1fr 1fr 40px;
-
+    grid-template-columns: $vert-margin 1fr 1fr 1fr 1fr $vert-margin;
     grid-template-areas: 
                 " . header header header header . "
-                " . img-lg img-lg teaser teaser . "
-                " . thumbs thumbs thumbs thumbs . "
-                " . favorites favorites favorites favorites . " ;
+                " . img-lg img-lg teaser teaser . ";
+                // " . thumbs thumbs thumbs thumbs . "
+                // " . favorites favorites favorites favorites . " ;
 
 }
 
@@ -54,10 +56,10 @@ img {
 }
 
 .header__logo {
-    // display: flex;
     text-transform: uppercase;
     font-size: 1em;
     letter-spacing: .125em;
+    margin: 2em 0 2em 0;
 }
 
 .header__main-nav {
@@ -71,6 +73,7 @@ img {
     align-items: baseline;
     list-style-type: none;
     padding: 0;
+    margin: 0 0 3em 0;
 }
 
 .header__li {
@@ -90,10 +93,27 @@ img {
       text-align: center;
   }
 
-  .thumbs {
-    grid-area: thumbs;
-    display: flex;
-    
+  .auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr; 
+    margin: 1em $vert-margin 0 $vert-margin;
+    grid-gap: 1em;
+
+}
+
+.banner {
+    display: grid;
+    grid-column: 1 / -1;
+    justify-items: center;
+    padding: 4rem;
+    margin: 1em $vert-margin 0 $vert-margin;
+}
+  .auto-fit__thumb { 
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
   }
 
 //   .thumbs__thumb:first-of-type {
