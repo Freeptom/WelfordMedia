@@ -51,7 +51,15 @@ img {
 .header__li {
   padding: 0 1.25em;
   text-transform: uppercase;
-  letter-spacing: .1em; }
+  letter-spacing: .2em;
+  font-size: .75em;
+  font-weight: 600; }
+
+.header__li:first-of-type {
+  padding: 0 8em 0 0; }
+
+.header__li:last-of-type {
+  padding: 0 0 0 8em; }
 
 .img-lg {
   grid-area: img-lg;
@@ -102,7 +110,7 @@ img {
 
 .about__text-container {
   position: absolute;
-  padding: 10% 30%;
+  padding: 10% 25%;
   background-color: #ffffff;
   top: 60%;
   border: solid 1px #8fabaa;
