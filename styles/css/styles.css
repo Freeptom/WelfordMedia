@@ -26,6 +26,7 @@ img {
   grid-area: header; }
 
 .header__logo {
+  text-align: center;
   text-transform: uppercase;
   font-size: 1em;
   letter-spacing: .125em;
@@ -53,31 +54,114 @@ img {
   letter-spacing: .1em; }
 
 .img-lg {
-  grid-area: img-lg; }
+  grid-area: img-lg;
+  padding-right: .5em; }
 
 .teaser {
   grid-area: teaser;
   background-color: #8fabaa;
   color: #ffffff;
-  text-align: center; }
+  text-align: center;
+  margin: 0 0 0 .5em; }
 
-.auto-fit {
+.about {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: 1fr;
-  margin: 1em 10em 0 10em;
-  grid-gap: 1em; }
+  margin: 1em 10em 1em 10em;
+  grid-gap: 1em;
+  position: relative; }
 
 .banner {
   display: grid;
   grid-column: 1 / -1;
   justify-items: center;
   padding: 4rem;
-  margin: 1em 10em 0 10em; }
+  margin: 1em 10em 0 10em;
+  text-transform: uppercase;
+  letter-spacing: .125em; }
 
-.auto-fit__thumb {
+.about__img-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.about__thumb {
+  position: relative;
   display: block;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: 100% 40%;
+  object-position: 100% 40%;
   height: 400px; }
+
+.about__text-container {
+  position: absolute;
+  padding: 10% 30%;
+  background-color: #ffffff;
+  top: 60%;
+  border: solid 1px #8fabaa;
+  z-index: 1; }
+
+.about__text-container::before {
+  content: '';
+  position: absolute;
+  border: 6px solid white;
+  top: -7px;
+  bottom: -7px;
+  right: -7px;
+  left: -7px;
+  z-index: 1; }
+
+.about__title {
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: .2em;
+  font-weight: 600;
+  color: #8fabaa; }
+
+.favourites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
+  margin: 1em 10em 1em 10em;
+  grid-gap: 1em;
+  position: relative; }
+
+.favourites__thumb {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.favourites__img-container {
+  position: relative; }
+
+.favourites__text-container {
+  display: block;
+  text-align: center;
+  text-transform: uppercase; }
+
+.favourites__title {
+  font-size: 1em; }
+
+.sale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.sale__copy {
+  position: absolute;
+  top: -16px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #0c0c0c;
+  color: #ffffff; }
