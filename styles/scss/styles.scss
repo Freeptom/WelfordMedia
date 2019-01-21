@@ -5,17 +5,14 @@
 }
 
 //fonts
-$brand: asdf;
-$sans-font: dunbar-low,
-sans-serif;
-// font-weight: 300;
-// font-style: normal;
-$serif-font: asdf;
+$sans-font: dunbar-low, sans-serif;
+$serif-font: karmina, serif;
 
 // color variables
 $primary-color: #484c55;
 $white: #ffffff;
 $main: #8fabaa;
+$secondary-color: #9399a5;
 
 // margin variables
 $vert-margin: 10em;
@@ -25,10 +22,11 @@ body {
     font-family: $sans-font;
     font-size: 16px;
     width: 100%;
-
+    color: $primary-color;
 
 }
 
+// font-styling
 h1 {}
 
 h2 {
@@ -58,13 +56,23 @@ img {
     grid-area: header;
 }
 
-.header__logo {
+.title {
     text-align: center;
     text-transform: uppercase;
     font-size: 1em;
     letter-spacing: .125em;
-    margin: 2em 0 2em 0;
-    
+    margin: 2em;
+    font-weight: 400;
+}
+
+
+.subtitle {
+    margin-top: -1em;
+    font-size: .8em;
+    letter-spacing: .125em;
+    font-weight: 400;
+    font-family: $serif-font;
+    color: $secondary-color;
 }
 
 .header__main-nav {}
@@ -80,11 +88,11 @@ img {
 }
 
 .header__li {
-    padding: 0 1.25em;
+    padding: 0 1.5em;
     text-transform: uppercase;
     letter-spacing: .2em;
     font-size: .75em;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .header__li:first-of-type {
@@ -105,9 +113,37 @@ img {
     background-color: $main;
     color: $white;
     text-align: center;
+    padding: 4em;
     margin: 0 0 0 .5em;
-
+    align-self: center;
+    height: 100%;
 }
+
+.teaser__secondary-copy {
+    padding: 2em 0;
+    font-family: $serif-font;
+    font-weight: 400;
+    letter-spacing: .05em;
+}
+
+.teaser__main-copy {
+    text-transform: uppercase;
+    letter-spacing: .35em;
+    font-size: 4em;
+    font-weight: 300;
+    align-self: center;
+    line-height: 110%;
+    font-family: $sans-font;
+}
+
+.teaser__main-copy:after {
+        content: "";
+        display: block; 
+        margin: 0 auto; 
+        width: 10%; 
+        padding-top: 40px; 
+        border-bottom: 1px solid $white; 
+    }
 
 .about {
     display: grid;
@@ -119,16 +155,7 @@ img {
 }
 
 
-.banner {
-    display: grid;
-    grid-column: 1 / -1;
-    justify-items: center;
-    padding: 4rem;
-    margin: 1em $vert-margin 0 $vert-margin;
-    text-transform: uppercase;
-    letter-spacing: .125em;
 
-}
 
 .about__img-container {
     position: relative;
@@ -147,11 +174,13 @@ img {
 
 .about__text-container {
     position: absolute;
-    padding: 10% 25%;
+    padding: 2em 4em;
+    text-align: center;
     background-color: $white;
-    top: 60%;
+    top: 15em;
     border: solid 1px $main;
     z-index: 1;
+    width: 90%;
 }
 
 .about__text-container::before {
@@ -169,8 +198,27 @@ img {
     text-transform: uppercase;
     font-size: 1em;
     letter-spacing: .2em;
-    font-weight: 600;
+    font-weight: 500;
     color: $main;
+    margin-bottom: 1em;
+}
+
+.about__secondary-copy {
+    font-family: $serif-font;
+    font-weight: 400;
+    letter-spacing: .05em;
+    color: $secondary-color;
+    font-size: 1em;
+}
+
+.banner {
+    display: grid;
+    grid-column: 1 / -1;
+    justify-items: center;
+    padding: 4rem;
+    margin: 1em $vert-margin 0 $vert-margin;
+    letter-spacing: .125em;
+
 }
 
 .favourites {
@@ -180,6 +228,8 @@ img {
     margin: 1em $vert-margin 1em $vert-margin;
     grid-gap: 1em;
     position: relative;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .favourites__thumb {
@@ -199,7 +249,28 @@ img {
 }
 
 .favourites__title {
-    font-size: 1em;
+    font-size: .75em;
+    letter-spacing: .125em;
+    margin: .5em 0;
+    font-weight: 500;
+}
+
+.favourites__price {
+    font-size: .75em;
+    font-weight: 500;
+    color: $secondary-color;
+    letter-spacing: .1em;
+}
+
+.favourites__price--strikethrough {
+    text-decoration: line-through;
+    display: inline;
+}
+
+.favourites__price--sale {
+    color: $main;
+    display: inline;
+    padding: 0 .5em;
 }
 
 .sale {
@@ -208,12 +279,15 @@ img {
 }
 
 .sale__copy {
+    text-transform: none;
     position: absolute;
     top: -16px;
-    padding: 8px;
+    padding: 12px 10px;
     border-radius: 50%;
     background-color: #0c0c0c;
     color: $white;
+    font-family: $serif-font;
+    
 }
 
 
