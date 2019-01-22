@@ -366,9 +366,7 @@ a {
 
 @media (max-width: 768px) {
   .main {
-    display: grid;
-    grid-template-columns: 2em 1fr 1fr 1fr 1fr 2em;
-    grid-template-areas: " . header header header header . " " . img-lg img-lg teaser teaser . "; }
+    grid-template-columns: 2em 1fr 1fr 1fr 1fr 2em; }
   .header__ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -390,45 +388,28 @@ a {
     align-self: center;
     padding: 0; }
   .teaser {
-    grid-area: teaser;
     padding: 0em;
     margin: 0 0 0 .5em;
     height: 100%; }
+  .teaser__secondary-copy {
+    padding: 2em 0;
+    font-size: 1.5em; }
   .teaser__main-copy {
     font-size: 1.8em;
-    font-weight: 300;
-    -ms-flex-item-align: center;
-    align-self: center;
-    line-height: 130%;
-    font-family: dunbar-low, sans-serif; }
-  .teaser__main-copy:after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 10%;
-    padding-top: 20px;
-    border-bottom: 1px solid #ffffff; }
+    line-height: 130%; }
   .about {
     margin: 1em 2em 1em 2em; }
   .about__thumb {
-    position: relative;
-    display: block;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: 100% 40%;
-    object-position: 100% 40%;
     height: 300px; }
   .about__text-container {
-    position: absolute;
     padding: 1em 2em;
-    top: 10em;
-    z-index: 1;
-    width: 90%; }
+    top: 10em; }
   .favourites__thumb {
     height: 200px; } }
 
 @media (max-width: 767px) {
+  body {
+    font-size: 1.2rem; }
   .main {
     grid-template-columns: 2em 1fr 1fr 1fr 1fr 2em; }
   .header__li {
@@ -447,22 +428,24 @@ a {
     align-self: center;
     padding: 0 4em; }
   .teaser__secondary-copy {
-    font-size: 1em; }
+    font-size: .75em;
+    padding: 1.5em 0; }
   .teaser__main-copy {
-    font-size: 1em; }
+    font-size: .75em;
+    padding: 0 5px; }
   .teaser__main-copy:after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 20%;
-    padding-top: 5px;
-    border-bottom: 1px solid #ffffff; }
+    width: 40%;
+    padding-top: 15px; }
   .about {
-    margin: 1em 2em 1em 2em; }
+    margin: 1em 2em 0em 2em; }
+  .about__text-container {
+    padding: 1em 1em;
+    top: 8em; }
   .banner {
-    margin: 1em 2em 0 2em; }
+    margin: 0;
+    padding: 3em 0 1em 0; }
   .favourites {
-    margin: 1em 2em 5em 2em; }
+    margin: 1em 2em 2em 2em; }
   .footer__nav {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
